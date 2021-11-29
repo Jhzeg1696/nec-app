@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "496806590718",
+    "project_id": "nec-app-9abc1",
+    "storage_bucket": "nec-app-9abc1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:496806590718:android:6e23e6574ce72f35514daf",
+        "android_client_info": {
+          "package_name": "com.example.necapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "496806590718-iks0jn067dvbchlicpoajbba9n0bess9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmIDCgvPkzViM4IB_ub5Kfe0awlEznnXY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "496806590718-iks0jn067dvbchlicpoajbba9n0bess9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:id="@+id/itemLayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/container"
+        android:layout_width="360dp"
+        android:layout_height="110dp"
+        app:cardElevation="3dp"
+        app:cardCornerRadius="15dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        >
+
+        <!--
+        In the above cardview widget
+        cardelevation property will give elevation to your card view
+        card corner radius will provide radius to your card view
+        card background color will give background color to your card view
+        card max elevation will give the cardview maximum elevation
+        card prevent corner overlap will add padding to CardView on v20 and before to prevent intersections between the Card content and rounded corners.
+        card use compact padding will add padding in API v21+ as well to have the same measurements with previous versions.
+        below are the two widgets imageview and text view we are displaying inside our card view.
+        -->
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/hour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ligth_grey"
+                android:singleLine="false"
+                android:fontFamily="sans-serif-black"
+                android:text="12:05"
+                android:paddingTop="20dp"
+                android:paddingRight="15dp"
+                android:textSize="12sp"
+                android:layout_alignParentRight="true"/>
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="6dp"
+                android:contentDescription="TODO"
+                android:src="@drawable/img_noticia" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/badge"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="5dp"
+                android:layout_marginLeft="12dp"
+                android:layout_toRightOf="@+id/icon"
+                app:cardBackgroundColor="@color/primary_two"
+                android:layout_marginTop="16dp"
+                app:cardMaxElevation="12dp"
+                app:cardPreventCornerOverlap="true"
+                app:contentPadding="5dp"
+                >
+
+            <TextView
+                android:id="@+id/section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GOBIERNO"
+                android:layout_gravity="center"
+                android:textSize="10dp"
+                android:textColor="@color/white"
+                />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/grey_darker"
+                android:layout_toRightOf="@+id/icon"
+                android:layout_below="@+id/badge"
+                android:layout_marginTop="5dp"
+                android:singleLine="false"
+                android:paddingRight="3dp"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:fontFamily="sans-serif-black"
+                android:textSize="16sp" />
+
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

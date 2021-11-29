@@ -1,21 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    android:padding="10dp"
+    android:scrollbars="none"
+    >
 
-    <View
-        android:id="@+id/banner"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:background="@drawable/banner"/>
+        android:layout_height="match_parent"
+        android:paddingRight="10dp"
+        tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/banner"
-        />
-</RelativeLayout>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/contenedorBanner"
+            app:cardElevation="3dp"
+            app:cardCornerRadius="15dp">
+            <View
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:background="@drawable/banner"/>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/alert"
+            android:layout_below="@+id/contenedorBanner"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            app:cardElevation="3dp"
+            app:cardCornerRadius="15dp"
+            app:cardBackgroundColor="@color/ligth_red"
+            app:cardPreventCornerOverlap="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="20dp"
+            >
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="15dp"
+                >
+
+                <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="70dp"
+                    android:layout_height="90dp"
+                    android:padding="10dp"
+                    android:contentDescription="TODO"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/shield" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/icon"
+                    android:text="CONSULTA VIRTUAL COVID-19"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-black"
+                    android:layout_marginTop="10dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title"
+                    android:layout_toRightOf="@id/icon"
+                    android:text="LINEA COVID"
+                    android:textColor="@color/white"
+                    />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tvEvents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eventos"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black"
+            android:textSize="20sp"
+            android:layout_below="@+id/alert"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/grey_darker"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_below="@+id/tvEvents"
+            android:layout_marginTop="10dp"
+            android:id="@+id/rvEventos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            />
+
+        <TextView
+            android:id="@+id/tvTramites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tramites mas buscados"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black"
+            android:textSize="20sp"
+            android:layout_below="@+id/rvEventos"
+            android:textColor="@color/grey_darker"
+            android:layout_marginTop="15dp"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_below="@+id/tvTramites"
+            android:layout_marginTop="10dp"
+            android:id="@+id/rvTramites"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2"
+            />
+
+
+
+    </RelativeLayout>
+
+</ScrollView>

@@ -1,4 +1,4 @@
-package com.example.necapp.ui.gallery;
+package com.example.necapp.iu.gallery;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

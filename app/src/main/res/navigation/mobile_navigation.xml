@@ -7,25 +7,25 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.necapp.ui.home.HomeFragment"
+        android:name="com.example.necapp.iu.principal.PrincipalFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.example.necapp.ui.gallery.GalleryFragment"
+        android:name="com.example.necapp.iu.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.example.necapp.ui.slideshow.SlideshowFragment"
+        android:name="com.example.necapp.iu.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
         android:id="@+id/nav_registro"
-        android:name="com.example.necapp.ui.registro.RegistroFragment"
+        android:name="com.example.necapp.iu.noticias.RegistroFragment"
         android:label="@string/menu_registro"
         tools:layout="@layout/fragment_registro"
         />

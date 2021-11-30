@@ -1,10 +1,8 @@
-package com.example.necapp.ui.registro;
+package com.example.necapp.iu.noticias;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-
-import com.example.necapp.services.LocalNotificationService;
 
 //import com.example.necapp.services.MyFirebaseMessagingService;
 

@@ -1,4 +1,4 @@
-package com.example.necapp.ui.slideshow;
+package com.example.necapp.iu.slideshow;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

@@ -1,14 +1,14 @@
-package com.example.necapp.ui.home;
+package com.example.necapp.iu.principal;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class PrincipalViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public PrincipalViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("\"En Nuevo Laredo viviremos los mejores años de nuestras vidas.\"");
     }

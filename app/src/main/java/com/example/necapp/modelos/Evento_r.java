@@ -1,10 +1,10 @@
-package com.example.necapp.models;
+package com.example.necapp.modelos;
 
-public class Evento {
+public class Evento_r {
     public String titulo;
     public String imagen;
 
-    public Evento(String titulo, String imagen)
+    public Evento_r(String titulo, String imagen)
     {
         this.titulo = titulo;
         this.imagen = imagen;

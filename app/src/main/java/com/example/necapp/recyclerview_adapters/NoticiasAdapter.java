@@ -1,4 +1,4 @@
-package com.example.necapp.rvadapters;
+package com.example.necapp.recyclerview_adapters;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -10,34 +10,31 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.necapp.R;
-import com.example.necapp.models.Items;
+import com.example.necapp.modelos.Items;
 import com.squareup.picasso.Picasso;
-
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class WarningsAdapter extends RecyclerView.Adapter<WarningsAdapter.MyViewHolder>{
+public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.MyViewHolder>{
     private List<Items> itemsList;
 
-    public WarningsAdapter(List<Items> mItemList){
+    public NoticiasAdapter(List<Items> mItemList){
         this.itemsList = mItemList;
     }
 
     @Override
-    public WarningsAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public NoticiasAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.text_row_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.noticia_item,parent,false);
         return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(WarningsAdapter.MyViewHolder holder, final int position) {
+    public void onBindViewHolder(NoticiasAdapter.MyViewHolder holder, final int position) {
         final Items item = itemsList.get(position);
         holder.name.setText(item.getName());
         Context context = holder.imageView.getContext();
@@ -74,11 +71,11 @@ public class WarningsAdapter extends RecyclerView.Adapter<WarningsAdapter.MyView
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            container = itemView.findViewById(R.id.container);
-            name = itemView.findViewById(R.id.tvName);
-            imageView = itemView.findViewById(R.id.icon);
-            badge = itemView.findViewById(R.id.badge);
-            section = itemView.findViewById(R.id.section);
+            container = itemView.findViewById(R.id.contenedor);
+            name = itemView.findViewById(R.id.textViewNombre);
+            imageView = itemView.findViewById(R.id.icono);
+            badge = itemView.findViewById(R.id.etiqueta);
+            section = itemView.findViewById(R.id.seccion);
             itemLayout =  itemView.findViewById(R.id.itemLayout);
 
         }

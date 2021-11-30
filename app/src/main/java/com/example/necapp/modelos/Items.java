@@ -1,4 +1,4 @@
-package com.example.necapp.models;
+package com.example.necapp.modelos;
 
 public class Items {
     private String name;

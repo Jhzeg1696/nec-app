@@ -1,11 +1,10 @@
-package com.example.necapp.rvadapters;
+package com.example.necapp.recyclerview_adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,8 +12,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.necapp.R;
-import com.example.necapp.models.Evento;
-import com.example.necapp.models.Tramite;
+import com.example.necapp.modelos.Tramite;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -30,7 +28,7 @@ public class TramiteAdapter extends RecyclerView.Adapter<TramiteAdapter.MyViewHo
     @Override
     public TramiteAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.tramite_row_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.tramite_item,parent,false);
         return new TramiteAdapter.MyViewHolder(view);
     }
 

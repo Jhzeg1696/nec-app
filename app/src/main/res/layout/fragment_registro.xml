@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.registro.RegistroFragment">
+    tools:context=".iu.noticias.RegistroFragment">
     <View
         android:id="@+id/banner"
         android:layout_width="match_parent"

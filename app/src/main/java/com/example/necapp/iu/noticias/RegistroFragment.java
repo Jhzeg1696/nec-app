@@ -1,26 +1,20 @@
-package com.example.necapp.ui.registro;
+package com.example.necapp.iu.noticias;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.necapp.R;
 import com.example.necapp.databinding.FragmentRegistroBinding;
-import com.example.necapp.models.Items;
-import com.example.necapp.rvadapters.WarningsAdapter;
-import com.example.necapp.ui.registro.RegistroViewModel;
+import com.example.necapp.modelos.Items;
+import com.example.necapp.recyclerview_adapters.NoticiasAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +25,7 @@ public class RegistroFragment extends Fragment {
     private FragmentRegistroBinding binding;
     // TEST
     private RecyclerView recyclerView;
-    private WarningsAdapter recyclerviewItemAdapter;
+    private NoticiasAdapter recyclerviewItemAdapter;
     private List<Items> itemsList;
     // TEST
 
@@ -83,7 +77,7 @@ public class RegistroFragment extends Fragment {
         itemsList.add(item4);
         itemsList.add(item5);
         recyclerView = (RecyclerView)view.findViewById(R.id.rvTest);
-        recyclerviewItemAdapter = new WarningsAdapter(itemsList);
+        recyclerviewItemAdapter = new NoticiasAdapter(itemsList);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(requireActivity());
         recyclerView.setLayoutManager(layoutManager);

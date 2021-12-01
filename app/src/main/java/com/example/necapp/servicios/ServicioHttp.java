@@ -42,9 +42,6 @@ public class ServicioHttp extends AsyncTask<String, Integer, String> {
                 content.append(inputLine);
             }
 
-            // Imprimiendo la respuesta
-            //Log.d("Respuesta", content.toString());
-
             // Cerrando el stream y la conexión
             in.close();
             con.disconnect();
@@ -56,9 +53,6 @@ public class ServicioHttp extends AsyncTask<String, Integer, String> {
                 System.out.println(item.getTitulo());
                 eventos.add(item);
             }
-            System.out.println(content.toString());
-            EventosAdapter eventosAdapter = new EventosAdapter(eventos);
-            eventosAdapter.updateData(eventos);
         }
         catch(Exception exception)
         {

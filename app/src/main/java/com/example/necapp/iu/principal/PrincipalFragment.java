@@ -1,6 +1,8 @@
 package com.example.necapp.iu.principal;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +24,12 @@ import com.example.necapp.recyclerview_adapters.EventosAdapter;
 import com.example.necapp.recyclerview_adapters.TramiteAdapter;
 import com.example.necapp.servicios.ServicioHttp;
 import com.example.necapp.util.RecyclerViewHelper;
+import com.google.gson.Gson;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,18 +71,8 @@ public class PrincipalFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState)
     {
-        //Eventos
-        eventos = new ArrayList<>();
-        Evento item1 = new Evento("218", "Abre municipio registro de vacunación", "sdasd", "noticias", "https://noticias.nld.gob.mx//archivos/30bf67775f9d75e5d961ecbdcebdeb13.jpeg", "https://noticias.nld.gob.mx//archivos/e460b1ff6cf97e2c785307ec1b133f53.jpeg", "29 de noviembre","0");
-        Evento item2 = new Evento("218", "Aprueba cabildo presupuesto de egresos historico", "sdasd", "noticias", "https://noticias.nld.gob.mx//archivos/969dc47202103be382453194ef244a8c.jpeg", "https://noticias.nld.gob.mx//archivos/e460b1ff6cf97e2c785307ec1b133f53.jpeg", "29 de noviembre","0");
-
-        eventos.add(item1);
-        eventos.add(item2);
         recyclerView = view.findViewById(R.id.rvEventos);
-        recyclerviewEventoAdapter = new EventosAdapter(eventos);
-        recyclerViewHelper = new RecyclerViewHelper(recyclerView, recyclerviewEventoAdapter, LinearLayoutManager.HORIZONTAL, getActivity());
-        recyclerViewHelper.prepararEventos();
-        new ServicioHttp().execute("google");
+        new ServicioHttp().execute("https://noticias.nld.gob.mx/assets/php/getNoticias.php?limit=20");
         // Tramites
         tramites = new ArrayList<>();
         Tramite tramite1 = new Tramite("", "https://nld.gob.mx/assets/img/imagen2.jpg");
@@ -96,4 +93,64 @@ public class PrincipalFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
+    public class ServicioHttp extends AsyncTask<String, Integer, List<Evento>> {
+
+        @Override
+        protected List<Evento> doInBackground(String... params)
+        {
+            List<Evento> eventosListado = new ArrayList<>();
+            URL url;
+            try
+            {
+                // Creando la conexión
+                url = new URL(params[0]);
+                HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+                // Especificando el metodo
+                con.setRequestMethod("GET");
+
+                // Obteniendo el codigo http de la petición
+                int status = con.getResponseCode();
+
+                // Obteniendo la respuesta
+                BufferedReader in = new BufferedReader(
+                        new InputStreamReader(con.getInputStream()));
+                String inputLine;
+                StringBuffer content = new StringBuffer();
+                while ((inputLine = in.readLine()) != null) {
+                    content.append(inputLine);
+                }
+
+                // Cerrando el stream y la conexión
+                in.close();
+                con.disconnect();
+
+                // Obteniendo los datos en json
+                Gson gson = new Gson();
+                Evento[] tests = gson.fromJson(content.toString(), Evento[].class);
+
+                // Agregando cada elemento a una nueva lista
+                for(Evento item : tests)
+                {
+                    eventosListado.add(item);
+                }
+            }
+            catch(Exception exception)
+            {
+                Log.d("Error: ", exception.getMessage());
+            }
+
+            // Devolviendo el listado de eventos
+            return eventosListado;
+        }
+
+        @Override
+        protected void onPostExecute(final List<Evento> list) {
+            recyclerviewEventoAdapter = new EventosAdapter(list);
+            recyclerViewHelper = new RecyclerViewHelper(recyclerView, recyclerviewEventoAdapter, LinearLayoutManager.HORIZONTAL, getActivity());
+            recyclerViewHelper.prepararEventos();
+        }
+    }
+
 }

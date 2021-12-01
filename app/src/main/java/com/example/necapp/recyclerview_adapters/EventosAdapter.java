@@ -72,37 +72,4 @@ public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.MyViewHo
             itemLayout =  itemView.findViewById(R.id.itemLayout);
         }
     }
-
-    public void updateData(List<Evento> dataSet)
-    {
-        System.out.println("UPDATE");
-        for(int i = 0; i < dataSet.size(); i++)
-        {
-            //this.eventos.add(dataSet.get(i));
-            System.out.println("ciclo: " + dataSet.get(i).getTitulo());
-            this.eventos.add(dataSet.get(i));
-        }
-//
-        //notifyItemInserted(getItemCount());
-        /*
-        if(flag == 0)
-        {
-            for(int i = 0; i < dataSet.size(); i++)
-            {
-                System.out.println(dataSet.get(i).getName());
-                this.itemsList.add(dataSet.get(i));
-            }
-            Items item = new Items("Señalan en comparecencia aviadores y simulaciones");
-            this.itemsList.add(item);
-            notifyItemInserted(getItemCount());
-        }
-
-        else
-        {
-            itemsList.clear();
-            notifyDataSetChanged();
-        }
-        */
-    }
-
 }

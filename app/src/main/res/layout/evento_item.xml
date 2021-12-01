@@ -9,7 +9,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/contenedor"
         android:layout_width="260dp"
-        android:layout_height="230dp"
+        android:layout_height="253dp"
         android:layout_marginTop="15dp"
         android:layout_marginRight="12dp"
         app:cardElevation="3dp"
@@ -19,9 +19,10 @@
         app:cardPreventCornerOverlap="true"
         android:layout_marginBottom="10dp"
         >
+
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="@drawable/gradiente"
             >
 

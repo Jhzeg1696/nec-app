@@ -34,32 +34,6 @@ public class RegistroFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_registro, container, false);
         return view;
-        /*
-        registroViewModel =
-                new ViewModelProvider(this).get(RegistroViewModel.class);
-
-        binding = FragmentRegistroBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
-
-        final TextView textView = binding.titulo;
-        registroViewModel.getMensaje().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-        itemsList = new ArrayList<>();
-        recyclerView = (RecyclerView)binding.findViewById(R.id.recycleView);
-        Items items = new Items("Item");
-        itemsList.add(items);
-        recyclerviewItemAdapter = new WarningsAdapter(itemsList);
-        recyclerView.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(requireActivity());
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(recyclerviewItemAdapter);
-        return root;
-        */
     }
 
     @Override
@@ -83,27 +57,6 @@ public class RegistroFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(recyclerviewItemAdapter);
-    }
-
-    public void upd()
-    {
-        /*
-        final Handler handler = new Handler();
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                recyclerviewItemAdapter.updateData(itemsList, 0);
-                handler.postDelayed(this, 5000);
-            }
-        }, 5000);
-
-        Items item1 = new Items("Item 1");
-        itemsList.add(item1);
-        Items item2 = new Items("Item 2");
-        itemsList.add(item2);
-        recyclerviewItemAdapter.updateData(itemsList, 0);
-
-         */
     }
 
     @Override

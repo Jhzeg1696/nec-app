@@ -1,6 +1,7 @@
 package com.example.necapp.recyclerview_adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.necapp.NoticiaCompletaActivity;
 import com.example.necapp.R;
 import com.example.necapp.modelos.Evento;
 import com.example.necapp.modelos.Evento_r;
@@ -48,7 +50,14 @@ public class EventosAdapter extends RecyclerView.Adapter<EventosAdapter.MyViewHo
         holder.contenedor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, evento.getTitulo(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, evento.getTitulo(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, NoticiaCompletaActivity.class);
+                intent.putExtra("com.example.myfirstapp.TITULO", evento.getTitulo());
+                intent.putExtra("com.example.myfirstapp.FECHA", evento.getFecha2());
+                intent.putExtra("com.example.myfirstapp.TIPO", evento.getTipo());
+                intent.putExtra("com.example.myfirstapp.ARCHIVO", evento.getArchivo());
+                intent.putExtra("com.example.myfirstapp.DESCRIPCION", evento.getDescripcion());
+                context.startActivity(intent);
             }
         });
     }

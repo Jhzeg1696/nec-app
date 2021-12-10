@@ -6,17 +6,19 @@ public class Evento {
     String tipo;
     String fecha;
     String archivo;
+    String descripcion;
     String fecha2;
     String destacada;
     String visible;
 
 
-    public Evento(String id, String titulo, String tipo, String fecha, String archivo, String fecha2, String destacada, String visible) {
+    public Evento(String id, String titulo, String tipo, String fecha, String archivo, String descripcion,String fecha2, String destacada, String visible) {
         this.id = id;
         this.titulo = titulo;
         this.tipo = tipo;
         this.fecha = fecha;
         this.archivo = archivo;
+        this.descripcion = descripcion;
         this.fecha2 = fecha2;
         this.destacada = destacada;
         this.visible = visible;
@@ -61,6 +63,10 @@ public class Evento {
     public void setArchivo(String archivo) {
         this.archivo = archivo;
     }
+
+    public String getDescripcion() { return this.descripcion; }
+
+    public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
 
     public String getFecha2() {
         return fecha2;

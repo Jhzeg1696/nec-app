@@ -8,12 +8,12 @@ import androidx.core.app.NotificationManagerCompat;
 import com.example.necapp.R;
 
 public class LocalNotificationService {
-    public void show(Context context)
+    public void show(Context context, String text)
     {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "notifications")
                 .setSmallIcon(R.drawable.logo_icono)
                 .setContentTitle("Gobierno de nuevo laredo")
-                .setContentText("Ejemplo de notificacion")
+                .setContentText(text)
                 .setAutoCancel(true)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 

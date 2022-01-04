@@ -52,17 +52,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        // NOTIFICATION TEST
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
-        {
-            NotificationChannel channel = new NotificationChannel("notifications", "notifications", NotificationManager.IMPORTANCE_DEFAULT);
-            NotificationManager manager = getSystemService(NotificationManager.class);
-            manager.createNotificationChannel(channel);
-
-            LocalNotificationService notificationService = new LocalNotificationService();
-            notificationService.show(MainActivity.this);
-        }
-        // NOTIFICATION TEST
     }
 
     @Override

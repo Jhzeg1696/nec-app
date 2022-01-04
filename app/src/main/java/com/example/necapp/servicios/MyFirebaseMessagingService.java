@@ -1,9 +1,13 @@
 package com.example.necapp.servicios;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.os.Build;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import com.example.necapp.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -33,6 +37,15 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         if(remoteMessage.getNotification() != null)
         {
             Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+            {
+                NotificationChannel channel = new NotificationChannel("notifications", "notifications", NotificationManager.IMPORTANCE_DEFAULT);
+                NotificationManager manager = getSystemService(NotificationManager.class);
+                manager.createNotificationChannel(channel);
+
+                LocalNotificationService notificationService = new LocalNotificationService();
+                notificationService.show(getApplicationContext(), remoteMessage.getNotification().getBody());
+            }
         }
     }
 
@@ -48,7 +61,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 }
 
                 String token = task.getResult();
-                Log.e(TAG, "Token: " + token);
+                Log.e(TAG, "Aqui Token: " + token);
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override

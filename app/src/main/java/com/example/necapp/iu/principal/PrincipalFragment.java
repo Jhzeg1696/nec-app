@@ -22,6 +22,7 @@ import com.example.necapp.modelos.Evento_r;
 import com.example.necapp.modelos.Tramite;
 import com.example.necapp.recyclerview_adapters.EventosAdapter;
 import com.example.necapp.recyclerview_adapters.TramiteAdapter;
+import com.example.necapp.servicios.MyFirebaseMessagingService;
 import com.example.necapp.servicios.ServicioHttp;
 import com.example.necapp.util.RecyclerViewHelper;
 import com.google.gson.Gson;
@@ -86,6 +87,9 @@ public class PrincipalFragment extends Fragment {
         tramitesAdapter = new TramiteAdapter(tramites);
         recyclerViewHelperTramites = new RecyclerViewHelper(recyclerViewTramites, tramitesAdapter, LinearLayoutManager.HORIZONTAL, getActivity());
         recyclerViewHelperTramites.prepararTramites();
+         MyFirebaseMessagingService firebaseMessagingService;
+        firebaseMessagingService = new MyFirebaseMessagingService();
+        firebaseMessagingService.getToken();
     }
 
     @Override

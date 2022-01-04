@@ -1,6 +1,7 @@
 package com.example.necapp;
 
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ImageView;
@@ -22,7 +23,8 @@ public class NoticiaCompletaActivity extends AppCompatActivity {
         if (getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
-            
+            toolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.red), PorterDuff.Mode.SRC_ATOP);
+
         }
 
         Intent intent = getIntent();

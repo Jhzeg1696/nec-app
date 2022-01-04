@@ -16,6 +16,6 @@ Facilitar procesos
 
 ## Capturas de pantalla
 ![s1](principal.png "Principal")
-![s1](principal2.png "Principal(2)")
+![s1](principal_2.png "Principal(2)")
 ![s1](noticia.png "noticia")
-![s1](notification.png "Notificacion")
+![s1](notifications.png "Notificacion")

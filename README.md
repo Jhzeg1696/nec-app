@@ -1,21 +1,30 @@
 # NVLD APP
 
-Aplicación de la ciudad de Nuevo Laredo (Android)
+Aplicación de la ciudad de Nuevo Laredo (Android).
 
-## Estado del proyecto
+### Estado del proyecto
 
-En desarrollo
+**EN DESARROLLO.**
 
-## Abstracto
+### Abstracto
 
 Este proyecto apunta a crear una aplicación movil con nuevas y mejores caracteristicas que puedan ayudar a la población de Nuevo Laredo.
 
-## Metas y Objetivos
+### Metas y Objetivos
 
-Facilitar procesos  
+Facilitar procesos.  
+Mostrar noticias.  
+Notificar avisos, próximos eventos, etc.  
+
+
+### Casos de uso  
+El usuario entra a la aplicación y podra ver las noticias mas recientes, información de interes, etc.  
+El usuario cierra aplicacion, un administrador podra enviar notificaciones desde un servidor remoto y el usuario
+recibira la notificación.
+
+### No considerado (por el momento)  
+Pagos en linea.
+
 
 ## Capturas de pantalla
-![s1](principal.png "Principal")
-![s1](principal_2.png "Principal(2)")
-![s1](noticia.png "noticia")
-![s1](notifications.png "Notificacion")
+![ss](ss.png "screenshots")

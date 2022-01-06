@@ -26,5 +26,5 @@ recibira la notificación.
 Pagos en linea.
 
 
-## Capturas de pantalla
+### Capturas de pantalla
 ![ss](ss.png "screenshots")
